@@ -98,15 +98,6 @@
 <img src="https://raw.githubusercontent.com/Iamgovinda/Iamgovinda/blob/output/snake.svg" alt="Snake animation" />
 
 ###
-<br/>  
-
-<div align="center">
-<img src="https://komarev.com/ghpvc/?username=Iamgovinda&&style=flat-square" align="center" />
-</div>  
-  
-
-<br/>  
-
 <div align="center"></div>
 <br />
 
