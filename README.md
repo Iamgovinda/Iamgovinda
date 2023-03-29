@@ -95,7 +95,7 @@
 </div>
 
 ###
-![Snake animation](https://github.com/iamgovinda/iamgovinda/blob/output/github-contribution-grid-snake.svg)
+![Snake animation](https://github.com/Iamgovinda/Iamgovinda/blob/output/github-contribution-grid-snake.svg)
 
 <div align="center"></div>
 <br />
