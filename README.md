@@ -95,10 +95,8 @@
 </div>
 
 ###
-<img src="https://raw.githubusercontent.com/Iamgovinda/Iamgovinda/blob/output/snake.svg" alt="Snake animation" />
-###
+![Snake animation](https://github.com/Iamgovinda/Iamgovinda/blob/output/github-contribution-grid-snake.svg)
 
-###
 <div align="center"></div>
 <br />
 
