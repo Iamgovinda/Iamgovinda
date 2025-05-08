@@ -2,8 +2,7 @@
 <img src="https://github.com/Iamgovinda/Iamgovinda/blob/main/images/github_header_image.png" align="center" style="width: 100%" />
 </div>  
   
-
-### <div align="center">I'm Gobinda, a Fullstack Software Engineer from Nepal.</div>  
+ 
   
   
 
@@ -12,7 +11,7 @@
 
 - ❓ Ask me about anything related to Python, Django, Django Rest Framework, Javascript, React. 
   
-
+- 📖 I write blog at: https://gobinda.info.np
 - ⚡ Fun fact: I ❤️ 📖🏏  
   
 
