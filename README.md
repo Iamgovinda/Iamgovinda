@@ -6,12 +6,14 @@
   
   
 
-- 🌱 I’m a Fullstack Software Engineer.
-  
+- 🌱 Currently focused on Data and Data Engineering.
 
-- ❓ Ask me about anything related to Python, Django, Django Rest Framework, Javascript, React. 
+- ❓ Ask me about anything related to **Python**, **Django**, **Django Rest Framework**, **Javascript**, **React**. 
   
 - 📖 I write blog at: https://gobinda.info.np
+
+- 📫 How to reach me jamkatelgovinda1@gmail.com
+
 - ⚡ Fun fact: I ❤️ 📖🏏  
   
 
