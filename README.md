@@ -3,7 +3,7 @@
 </div>  
   
 
-### <div align="center">I'm Gobinda, a Backend Developer from Nepal.</div>  
+### <div align="center">I'm Gobinda, a Fullstack Software Engineer from Nepal.</div>  
   
   
 
