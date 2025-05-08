@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/Iamgovinda/Iamgovinda/blob/main/20250508_1401_Tech%20Stack%20Showcase_simple_compose_01jtqfcrt6fj1byda20e1ghgpa.png" align="center" style="width: 100%" />
+<img src="https://github.com/Iamgovinda/Iamgovinda/blob/main/images/github_header_image.png" align="center" style="width: 100%" />
 </div>  
   
 
