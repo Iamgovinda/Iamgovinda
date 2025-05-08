@@ -7,10 +7,10 @@
   
   
 
-- 🌱 I’m currently learning Backend Development.  
+- 🌱 I’m a Fullstack Software Engineer.
   
 
-- ❓ Ask me about anything related to Python, Django, Django Rest Framework.  
+- ❓ Ask me about anything related to Python, Django, Django Rest Framework, Javascript, React. 
   
 
 - ⚡ Fun fact: I ❤️ 📖🏏  
