@@ -18,7 +18,7 @@ jobs:
           curl -s -X POST https://gql.hashnode.com \
           -H "Content-Type: application/json" \
           -d '{
-            "query": "query { publication(host: \"iamgovinda.hashnode.dev\") { posts(first: 5) { edges { node { title slug } } } } }"
+            "query": "query { publication(host: \"iamgovinda.hashnode.dev\") { posts(first: 5) { edges { node { title slug } } } }"
           }' > response.json
 
       - name: Extract and format blog list
@@ -35,10 +35,13 @@ jobs:
         run: |
           start="<!-- BLOG-POST-LIST:START -->"
           end="<!-- BLOG-POST-LIST:END -->"
-          escaped=$(printf '%s\n' "$BLOG_LIST" | sed 's/[&/\]/\\&/g')
-          sed -i.bak "/$start/,/$end/{ /$start/{p; a\\
+          escaped=$(printf '%s\n' "$BLOG_LIST" | sed 's:[\/&]:\\&:g')
+          # Replace content between start and end markers with the new list
+          sed -i.bak -e "/$start/,/$end/ {
+              /$start/!{ /$end/!d}
+              /$end/ i\\
 $escaped
-        }; /$end/p; d }" README.md
+          }" README.md
           rm README.md.bak
 
       - name: Commit and push changes
