@@ -36,7 +36,6 @@ jobs:
           start="<!-- BLOG-POST-LIST:START -->"
           end="<!-- BLOG-POST-LIST:END -->"
           escaped=$(printf '%s\n' "$BLOG_LIST" | sed 's:[\/&]:\\&:g')
-          # Replace content between start and end markers with the new list
           sed -i.bak -e "/$start/,/$end/ {
               /$start/!{ /$end/!d}
               /$end/ i\\
