@@ -3,7 +3,7 @@ name: 'Hashnode Blogs'
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *' # Runs Every Day
+    - cron: '0 0 * * *' # Runs every hour, on the hour.
 
 jobs:
   update_blogs:
@@ -14,10 +14,9 @@ jobs:
         uses: actions/checkout@main
 
       - name: 'Hashnode Blog Action'
-        uses: 'Sachin-chaurasiya/hashnode-blog-action@main'
+        uses: "Sachin-chaurasiya/hashnode-blog-action@v0.0.8"
         with:
-          HASHNODE_PUBLICATION_NAME: 'iamgovinda.hashnode.dev'
-          POST_COUNT: 6
+          HASHNODE_PUBLICATION_NAME: 'blog.iamgovinda.dev'
           FORMAT: 'list'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
