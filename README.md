@@ -20,8 +20,8 @@
 <br/>  
 
 ## My Latest Blog Posts 👇
-<!-- BLOG-POST-LIST:START -->
-<!-- BLOG-POST-LIST:END -->
+<!-- BLOG_START -->
+<!-- BLOG_END -->
 
 
 ## My Skill Set  
