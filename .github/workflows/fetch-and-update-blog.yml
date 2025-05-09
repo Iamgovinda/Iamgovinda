@@ -2,7 +2,7 @@ name: Update Blog Posts in README
 
 on:
   schedule:
-    - cron: '0 0 * * *' 
+    - cron: '0 0 * * *'
   workflow_dispatch:
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
           curl -s -X POST https://gql.hashnode.com \
           -H "Content-Type: application/json" \
           -d '{
-            "query": "query { publication(host: \"iamgovinda.hashnode.dev\") { posts(first: 5) { edges { node { title slug } } } }"
+            "query": "query { publication(host: \"iamgovinda.hashnode.dev\") { posts(first: 2) { edges { node { title slug } } } }"
           }' > response.json
 
       - name: Extract and format blog list
@@ -35,13 +35,15 @@ jobs:
         run: |
           start="<!-- BLOG-POST-LIST:START -->"
           end="<!-- BLOG-POST-LIST:END -->"
-          escaped=$(printf '%s\n' "$BLOG_LIST" | sed 's:[\/&]:\\&:g')
-          sed -i.bak -e "/$start/,/$end/ {
-              /$start/!{ /$end/!d}
-              /$end/ i\\
-$escaped
-          }" README.md
-          rm README.md.bak
+          # Escape special characters
+          escaped_blog_list=$(echo "$BLOG_LIST" | sed -e 's/[\/&]/\\&/g')
+          # Use awk for safer multi-line replacement
+          awk -v start="$start" -v end="$end" -v content="$escaped_blog_list" '
+            BEGIN { in_block = 0 }
+            $0 ~ start { in_block = 1; print; next }
+            $0 ~ end { in_block = 0; print content; print; next }
+            in_block == 0 { print }
+          ' README.md > README.md.tmp && mv README.md.tmp README.md
 
       - name: Commit and push changes
         run: |
