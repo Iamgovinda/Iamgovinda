@@ -24,8 +24,9 @@ jobs:
       - name: Extract and format blog list
         id: bloglist
         run: |
+          blog_list=$(cat response.json | jq -r '.data.publication.posts.edges[] | "- [\(.node.title)](https://iamgovinda.hashnode.dev/\(.node.slug))"')
           echo "BLOG_LIST<<EOF" >> $GITHUB_ENV
-          cat response.json | jq -r '.data.publication.posts.edges[] | "- [\(.node.title)](https://iamgovinda.hashnode.dev/\(.node.slug))"' >> $GITHUB_ENV
+          echo "$blog_list" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
       - name: Inject blog list into README
