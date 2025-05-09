@@ -24,10 +24,12 @@ jobs:
       - name: Extract and format blog list
         id: bloglist
         run: |
-          blog_list=$(cat response.json | jq -r '.data.publication.posts.edges[] | "- [\(.node.title)](https://iamgovinda.hashnode.dev/\(.node.slug))"')
-          echo "BLOG_LIST<<EOF" >> $GITHUB_ENV
-          echo "$blog_list" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          blog_list=$(jq -r '.data.publication.posts.edges[] | "- [\(.node.title)](https://iamgovinda.hashnode.dev/\(.node.slug))"' response.json)
+          {
+            echo "BLOG_LIST<<EOF"
+            echo "$blog_list"
+            echo "EOF"
+          } >> $GITHUB_ENV
 
       - name: Inject blog list into README
         run: |
