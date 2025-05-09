@@ -21,7 +21,7 @@ jobs:
         run: pip install requests
 
       - name: Update README
-        run: python .github/scripts/update-blogs.py
+        run: python scripts/update-blogs.py
 
       - name: Commit changes
         run: |
