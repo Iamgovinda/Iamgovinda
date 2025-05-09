@@ -1,0 +1,47 @@
+name: Update Blog Posts in README
+
+on:
+  schedule:
+    - cron: '0 0 * * *' 
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch blog posts
+        run: |
+          curl -s -X POST https://gql.hashnode.com \
+          -H "Content-Type: application/json" \
+          -d '{
+            "query": "query { publication(host: \"iamgovinda.hashnode.dev\") { posts(first: 5) { edges { node { title slug } } } } }"
+          }' > response.json
+
+      - name: Extract and format blog list
+        id: bloglist
+        run: |
+          echo "BLOG_LIST<<EOF" >> $GITHUB_ENV
+          cat response.json | jq -r '.data.publication.posts.edges[] | "- [\(.node.title)](https://iamgovinda.hashnode.dev/\(.node.slug))"' >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Inject blog list into README
+        run: |
+          start="<!-- BLOG-POST-LIST:START -->"
+          end="<!-- BLOG-POST-LIST:END -->"
+          escaped=$(printf '%s\n' "$BLOG_LIST" | sed 's/[&/\]/\\&/g')
+          sed -i.bak "/$start/,/$end/{ /$start/{p; a\\
+$escaped
+        }; /$end/p; d }" README.md
+          rm README.md.bak
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          git commit -m "Update blog list in README" || echo "No changes to commit"
+          git push

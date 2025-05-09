@@ -19,6 +19,9 @@
 
 <br/>  
 
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
+
 
 ## My Skill Set  
 <table><tr><td valign="top" width="33%">
