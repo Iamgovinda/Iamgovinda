@@ -21,6 +21,19 @@
 
 ## My Latest Blog Posts 👇
 <!-- BLOG_START -->
+- [Model Serializer vs Dynamic Fields Model Serializer in DRF](https://gobinda.info.np/model-serializer-vs-dynamic-fields-model-serializer-in-drf) - Mar 04, 2023
+  
+  The Django REST Framework (DRF) uses the serializers ModelSerializer and DynamicFieldsModelSerializer to serialize and deserialize Django model instances.
+ModelSerializer is a serializer that creates fields on the fly using the model's defined fields...
+- [Decorators in Python!!!](https://gobinda.info.np/decorators-in-python) - Sep 10, 2022
+  
+  In general term, decorators are those who decorates something to make it prettier. Similarly, In python, decorators are those functions which decorates another function.
+Some Information related to python decorators:
+
+Decorators takes a function as a...
+- [MVC vs MVT architecture!!!](https://gobinda.info.np/mvc-vs-mvt-architecture) - Sep 09, 2022
+  
+  During the process of software development, a developer has to face lots of difficulties and problems. These issues need to be handled with some sort of mechanism to achieve the goal easily. And there’s the software design pattern that comes into the...
 <!-- BLOG_END -->
 
 
