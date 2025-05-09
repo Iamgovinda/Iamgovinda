@@ -20,9 +20,8 @@
 <br/>  
 
 ## My Latest Blog Posts 👇
-
-<!-- BLOG-POST-LIST:START -->
-<!-- BLOG-POST-LIST:END -->
+<!-- HASHNODE_BLOG:START -->
+<!-- HASHNODE_BLOG:END -->
 
 
 ## My Skill Set  
